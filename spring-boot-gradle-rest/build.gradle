@@ -11,11 +11,10 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
+apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
@@ -24,9 +23,11 @@ repositories {
 
 
 dependencies {
-    // Spring Dependencies
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile('org.springframework.boot:spring-boot-starter')
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    dev("org.springframework.boot:spring-boot-devtools")
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootRun {
+    classpath = sourceSets.main.runtimeClasspath + configurations.dev
 }
