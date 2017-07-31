@@ -20,3 +20,4 @@ https://gist.github.com/iros/3426278
 
 ## HTTP
 - http://localhost:8081/
+    GET : http://localhost:8081/training/api/v1/index
