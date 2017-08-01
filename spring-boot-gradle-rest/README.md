@@ -21,3 +21,13 @@ https://gist.github.com/iros/3426278
 ## HTTP
 - http://localhost:8081/
     GET : http://localhost:8081/training/api/v1/index
+## USER CONTROLLER
+    GET : http://localhost:8081/training/api/v1/users
+    
+    POST : http://localhost:8081/training/api/v1/users
+    
+    PayLoad Json Object {userId: "userId", userName: "user name"}
+    DELETE : http://localhost:8081/training/api/v1/users/:userId
+    
+    PUT : http://localhost:8081/training/api/v1/users/:userId
+    PayLoad Json Object  {userId: "userId", userName: "user name"}
