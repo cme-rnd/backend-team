@@ -45,7 +45,7 @@ public class UserController {
     	}
     }
     
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value ="/users")
     public void addUser(@RequestBody User user) {
     	usersMock.add(user);
     }
