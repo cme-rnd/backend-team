@@ -5,6 +5,10 @@ import javax.jws.soap.SOAPBinding;
 public class User {
     private String userId;
     private String userName;
+    
+    public User() {
+    	
+    }
 
     public User(String userId, String userName) {
         this.userId = userId;

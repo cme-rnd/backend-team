@@ -29,6 +29,12 @@ public class UserController {
         return usersMock;
     }
     
+    @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
+    public User getUsers(@PathVariable String userId) {
+        return usersMock.stream().filter(p->p.getUserId().equals(userId)).findFirst().orElse(null);
+    }
+    
+    
     @RequestMapping(method = RequestMethod.DELETE, value = "/users/{userId}" )
     public void deleteUser(@PathVariable String userId) {
     	usersMock.removeIf(p -> p.getUserId().equals(userId));
@@ -39,8 +45,8 @@ public class UserController {
     	for(int i = 0; i < usersMock.size(); i++) {
     		User upUser = usersMock.get(i);
     		if (upUser.getUserId().equals(userId)) {
-    			usersMock.set(i, upUser);
-    			break;
+    			usersMock.set(i, user);
+    			return;
     		}
     	}
     }
