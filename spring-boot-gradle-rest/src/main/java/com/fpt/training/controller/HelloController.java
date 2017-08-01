@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public @ResponseBody
+    public
     String index() {
         return "Gradle : Hello Spring Boot 11111 3333";
     }
