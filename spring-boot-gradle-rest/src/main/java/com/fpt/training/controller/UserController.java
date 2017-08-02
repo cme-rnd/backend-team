@@ -28,9 +28,9 @@ public class UserController {
         return usersMock;
     }
 
-    @RequestMapping(value = "/users/{userId}", method = RequestMethod.POST)
-    public List<User> addUser(@PathVariable String userId) {
-    	usersMock.add(new User(userId,"Sy"));
+    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    public List<User> addUser() {
+    	usersMock.add(new User("sytd", "SY"));
     	return usersMock;
     }
 
