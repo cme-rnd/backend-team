@@ -34,11 +34,11 @@ public class UserController {
     	usersMock.add(user);
     }
 
-    @RequestMapping(value = "/users/{userId}", method = RequestMethod.PUT)
-    public void updateUser(@PathVariable String userId) {
-    	for(User user:usersMock) {
-    		if(userId.equals(user.getUserId())) {
-    			user.setUserName("Sy");
+    @RequestMapping(value = "/users", method = RequestMethod.PUT)
+    public void updateUser(@RequestBody User user) {
+    	for(User userMock:usersMock) {
+    		if(user.getUserId().equals(userMock.getUserId())) {
+    			userMock.setUserName(user.getUserName());
     		}
     	}
     }
