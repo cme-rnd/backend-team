@@ -20,6 +20,23 @@ public class UserController {
     static {
         usersMock.add(new User("FPT SOFTWARE", "user"));
         usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
+        usersMock.add(new User("HO CHI MINH", "admin"));
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
