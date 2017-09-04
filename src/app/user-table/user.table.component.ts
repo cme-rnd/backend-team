@@ -41,6 +41,7 @@ export class UserTableComponent implements OnInit, OnDestroy {
     }
 
     edit(user): void {
-      this.router.navigate(['/user', {component: UserComponent, data: [{userData : user}]}]);
+      this.userservice.user = user;
+      this.router.navigate(['/user']);
     }
 }

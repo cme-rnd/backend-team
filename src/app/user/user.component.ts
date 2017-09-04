@@ -19,7 +19,7 @@ export class UserComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.userData = this.route.snapshot.data[0]['userData'];
+        this.userData = this.userService.user;
         if ( this.userData) {
           this.model.username = this.userData.userId;
           this.model.password = this.userData.passWord;

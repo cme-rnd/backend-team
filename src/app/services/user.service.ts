@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserService {
 
-    users: User[];
+    user: User;
     mainURL: 'http://localhost:8081/training/api/v1';
     constructor(private http: Http, private router: Router) {
     }
