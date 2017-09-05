@@ -2,19 +2,19 @@ package com.fpt.training.model;
 
 public class User {
     String userId;
-    String userName;
+    String passWord;
     public User(){
     	
     }
     
-    public User(String userId, String userName) {
+    public User(String userId, String passWord) {
         this.userId = userId;
-        this.userName = userName;
+        this.passWord = passWord;
     }
     
     public User(User newUser) {
         this.userId = newUser.getUserId();
-        this.userName = newUser.getUserName();
+        this.passWord = newUser.getPassWord();
     }
 
     public String getUserId() {
@@ -25,13 +25,12 @@ public class User {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
-    }
+    public String getPassWord() {
+		return passWord;
+	}
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}    
 
 }

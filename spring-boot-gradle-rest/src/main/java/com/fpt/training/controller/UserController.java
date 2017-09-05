@@ -6,6 +6,7 @@ import com.fpt.training.model.User;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import java.util.List;
 import javax.websocket.server.PathParam;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/training/api/v1")
 public class UserController {
 
@@ -27,11 +29,26 @@ public class UserController {
     static {
         usersMock.add(new User("user", "user"));
         usersMock.add(new User("admin", "admin"));
+        usersMock.add(new User("admin1", "admin1"));
+        usersMock.add(new User("admin2", "admin2"));
+        usersMock.add(new User("admin3", "admin3"));
+        
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public List<User> getUsers() {
         return usersMock;
+    }
+    
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public boolean update(@RequestBody User userData) {
+    	for(int i = 0 ; i < usersMock.size() ; i++ ){
+    		if(userData.getUserId().equals(usersMock.get(i).getUserId())){
+    			usersMock.get(i).setPassWord(userData.getPassWord());
+    			return true;
+    		}
+    	}
+        return false;
     }
     
     
@@ -51,14 +68,14 @@ public class UserController {
         return usersMock;
     }
     
-    @RequestMapping(value = "/users/{userID}", method = RequestMethod.DELETE)
-    public List<User> deleteUser(@PathVariable String userID) {
+    @RequestMapping(value = "/deleteUsers/{userID}", method = RequestMethod.DELETE)
+    public boolean deleteUser(@PathVariable String userID) {
     	for(int i = 0 ; i < usersMock.size() ; i++ ){
     		if(userID.equals(usersMock.get(i).getUserId())){
     			usersMock.remove(i);
-    			return usersMock;
+    			return true;
     		}
     	}
-        return usersMock;
+        return false;
     }
 }
